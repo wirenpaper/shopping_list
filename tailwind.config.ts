@@ -10,6 +10,13 @@ const config: Config = {
     extend: {
       width: {
         '25rem': '25rem',
+        '45': '12rem',
+      },
+      backgroundColor: {
+        'buttonColor': '#E5E5E5',
+      },
+      fontSize: {
+        'custom-sm': '0.85rem'
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
