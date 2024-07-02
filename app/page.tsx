@@ -1,4 +1,9 @@
+"use client";
+import { useState } from 'react';
+
 export default function Home() {
+  const [items, setItems] = useState([]);
+
   return (
     <>
       <h1 className="flex justify-center p-1">Project 4: Shopping List</h1>
@@ -23,5 +28,16 @@ export default function Home() {
         </div>
       </div>
     </>
+  );
+}
+
+function Item({ item, onRemoveItem }) {
+  return (
+    <li>
+      {item}
+      <button onClick={() => onRemoveItem(item)}>
+        x
+      </button>
+    </li>
   );
 }
