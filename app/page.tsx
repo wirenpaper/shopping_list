@@ -3,14 +3,13 @@ import { useState } from "react";
 import Item from "./item";
 
 export default function Home() {
-  //const [items, setItems] = useState([]);
-  const items = [
+  const [items, setItems] = useState([
     "some text",
     "another text",
     "more text",
     "extra text",
     "additional text",
-  ];
+  ]);
 
   const handleSubmit = () => {
     console.log("ha");
