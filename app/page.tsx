@@ -1,9 +1,16 @@
 "use client";
 import { useState } from "react";
-import Item from "./item"
+import Item from "./item";
 
 export default function Home() {
-  const [items, setItems] = useState([]);
+  //const [items, setItems] = useState([]);
+  const items = [
+    "some text",
+    "another text",
+    "more text",
+    "extra text",
+    "additional text",
+  ];
 
   const handleSubmit = () => {
     console.log("ha");
@@ -32,9 +39,9 @@ export default function Home() {
               </div>
             </form>
             <div className="flex-row ml-4 pb-3">
-              <Item text="some text" />
-              <Item text="cra" />
-              <Item text="sorry mang" />
+              {items.map((text, index) => (
+                <Item key={index} text={text} />
+              ))}
             </div>
           </div>
         </div>
