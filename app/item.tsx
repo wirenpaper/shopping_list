@@ -1,16 +1,17 @@
 import React from "react";
 
-// Define the props interface
 interface ItemProps {
   text: string;
+  onDelete: () => void;
 }
 
-// Functional component definition
-const Item: React.FC<ItemProps> = ({ text }) => {
+const Item: React.FC<ItemProps> = ({ text, onDelete }) => {
   return (
     <div className="flex w-48 justify-between">
       <p>{text}</p>
-      <button className="text-red-600 font-bold size-4">x</button>
+      <button onClick={onDelete} className="text-red-600 font-bold size-4">
+        x
+      </button>
     </div>
   );
 };

@@ -6,10 +6,11 @@ export default function Home() {
   const [items, setItems] = useState([
     "some text",
     "another text",
-    "more text",
-    "extra text",
-    "additional text",
   ]);
+
+  const handleDelete = (index: number) => {
+    setItems(items.filter((_, i) => i !== index));
+  };
 
   const handleSubmit = () => {
     console.log("ha");
@@ -37,9 +38,9 @@ export default function Home() {
                 </button>
               </div>
             </form>
-            <div className="flex-row ml-4 pb-3">
+            <div className="flex-row ml-4 pb-5">
               {items.map((text, index) => (
-                <Item key={index} text={text} />
+                <Item key={index} text={text} onDelete={() => handleDelete(index)} />
               ))}
             </div>
           </div>
