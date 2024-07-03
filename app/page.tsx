@@ -14,7 +14,10 @@ export default function Home() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("ha");
+    const form = event.target as HTMLFormElement;
+    const input = form.item;
+    console.log(input.value);
+    form.reset();
   };
 
   return (
@@ -28,6 +31,7 @@ export default function Home() {
               <div className="flex">
                 <input
                   type="text"
+                  name="item"
                   placeholder="Add a new item"
                   className="border placeholder-gray-500 border-gray-500 
                            mb-3 h-5 w-44 pl-1 text-custom-sm rounded-sm"
