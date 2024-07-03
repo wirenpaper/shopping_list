@@ -12,7 +12,8 @@ export default function Home() {
     setItems(items.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     console.log("ha");
   };
 
