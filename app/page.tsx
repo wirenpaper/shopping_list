@@ -3,10 +3,7 @@ import { useState } from "react";
 import Item from "./item";
 
 export default function Home() {
-  const [items, setItems] = useState([
-    "some text",
-    "another text",
-  ]);
+  const [items, setItems] = useState<string[]>([]);
 
   const handleDelete = (index: number) => {
     setItems(items.filter((_, i) => i !== index));
@@ -16,7 +13,8 @@ export default function Home() {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const input = form.item;
-    console.log(input.value);
+    const newItems = [...items, input.value];
+    setItems(newItems);
     form.reset();
   };
 
